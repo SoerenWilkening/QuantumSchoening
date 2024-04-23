@@ -61,6 +61,7 @@ int main(int argc, char *argv[]) {
         printf("i = %d\n", f);
         par = generate_swaps(num_threads, clause_length);
         for (int k = 0; k < num_threads; k++) {
+            par[k]->f = f;
             sprintf(abc, "uf20-91/uf20-0%d.cnf", f);
             par[k]->file = abc;
             pthread_create(&threads[k], NULL, (void *) exact_hamming_distance_calc, (void *) par[k]);

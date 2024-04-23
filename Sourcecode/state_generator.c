@@ -1,7 +1,3 @@
-//
-// Created by Sören Wilkening on 28.02.23.
-//
-
 #include "state_generator.h"
 #include <string.h>
 

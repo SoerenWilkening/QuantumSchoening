@@ -1,7 +1,3 @@
-//
-// Created by Sören Wilkening on 28.02.23.
-//
-
 #include "grover_initialization_solver.h"
 #include "state_generator.h"
 #include <math.h>
@@ -11,6 +7,7 @@ int min(int a, int b) {
     if (a < b) return a;
     return b;
 }
+
 
 long double binomialCoefficients(int n_, int k) {
     long double C[k + 1];
@@ -23,7 +20,9 @@ long double binomialCoefficients(int n_, int k) {
     return C[k];
 }
 
+
 int schoening_routine(struct assign * ass, cnf *res, set_of_swaps *swaps, int *clause_length) {
+	// Schönings routine applied to a single assignment
     int cl;
     int eval = eval_cnf(ass, res, clause_length);
     if (eval) {
@@ -50,6 +49,7 @@ int schoening_routine(struct assign * ass, cnf *res, set_of_swaps *swaps, int *c
 long int
 calculation_hamming_distance(int hamming_distance, long double reps, int *length, cnf *CNF, params **par,
                              struct assign sol) {
+    // calculates the number of to feasibility mapped for some states with certain hamming distance
     long int total = 0;
 
     for (int i = 0; i < reps; i++) {
@@ -65,9 +65,10 @@ calculation_hamming_distance(int hamming_distance, long double reps, int *length
     return total;
 }
 
-/* currently implemented for hamming distance = 1 */
+
 long int calculation_hamming_distance_exact(int hamming_distance, long double reps, int *length, cnf *CNF, params **par,
                                             struct assign sol) {
+    // calculates the number of to feasibility mapped for all states with certain hamming distance
     int total = 0;
     for (int i = 0; i < reps; i++) {
         printf("\rrep = %d", i);
@@ -204,6 +205,7 @@ int *exact_calc(void *param) {
     pthread_exit((void *) total);
 }
 
+
 int hamming_distance(int *a1, int *a2){
     int h_dist = 0;
     for (int i = 0; i < n; ++i) {
@@ -211,6 +213,7 @@ int hamming_distance(int *a1, int *a2){
     }
     return h_dist;
 }
+
 
 int *exact_hamming_distance_calc(void *param){
     params *par = (params *) param;
@@ -250,8 +253,8 @@ int *exact_hamming_distance_calc(void *param){
     for (int i = 0; i < n + 1; ++i) {
         char abc[1024];
         char create[1024];
-        sprintf(abc, "exact_results/hamming_distance_f=3/hamming_distance=%d.txt", i);
-        sprintf(create, "mkdir -p exact_results/hamming_distance_f=3/");
+        sprintf(abc, "exact_results/hamming_distance_f=%d/hamming_distance=%d.txt", par->f, i);
+        sprintf(create, "mkdir -p exact_results/hamming_distance_f=%d/", par->f);
         system(create);
         FILE *file_results = fopen(abc, "a");
         fprintf(file_results, "%d\n", total_h[i]);

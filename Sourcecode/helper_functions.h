@@ -1,9 +1,5 @@
-//
-// Created by Sören Wilkening on 28.02.23.
-//
-
-#ifndef SIMP_SCH_HELPER_FUNCTIONS_H
-#define SIMP_SCH_HELPER_FUNCTIONS_H
+#ifndef HELPER_FUNCTIONS_H
+#define HELPER_FUNCTIONS_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,6 +23,7 @@ typedef struct set_of_swaps{
 
 typedef struct params{
     char *file;
+    int f;
 
     set_of_swaps swaps;
 } params;
@@ -48,4 +45,4 @@ int eval_cnf(struct assign *ass, cnf *CNF, int *clause_length);
 
 int *int_to_bin(int val);
 
-#endif //SIMP_SCH_HELPER_FUNCTIONS_H
+#endif //HELPER_FUNCTIONS_H

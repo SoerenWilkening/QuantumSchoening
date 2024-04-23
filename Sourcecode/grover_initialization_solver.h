@@ -1,9 +1,5 @@
-//
-// Created by Sören Wilkening on 28.02.23.
-//
-
-#ifndef SIMP_SCH_GROVER_INITIALIZATION_SOLVER_H
-#define SIMP_SCH_GROVER_INITIALIZATION_SOLVER_H
+#ifndef GROVER_INITIALIZATION_SOLVER_H
+#define GROVER_INITIALIZATION_SOLVER_H
 
 #include "helper_functions.h"
 
@@ -15,4 +11,4 @@ int *change_state(int haming_distance);
 
 int *exact_hamming_distance_calc(void *param);
 
-#endif //SIMP_SCH_GROVER_INITIALIZATION_SOLVER_H
+#endif //GROVER_INITIALIZATION_SOLVER_H
