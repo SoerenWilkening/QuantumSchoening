@@ -7,8 +7,6 @@ run the code via
 
 ```
 mkdir build && cd build
-
 cmake ../
-
 cmake -- build .
 ```
