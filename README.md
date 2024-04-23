@@ -5,12 +5,12 @@ Code for numerical calculations in "Paper Link"
 
 run the code via
 
-'''
+```
 mkdir build && cd build
-'''
-'''
+```
+```
 cmake ../
-'''
-'''
+```
+```
 cmake -- build .
-'''
+```
