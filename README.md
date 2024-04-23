@@ -9,7 +9,7 @@ Build the code:
 ```
 mkdir build && cd build
 cmake ../
-cmake -- build .
+cmake --build .
 cd ..
 ```
 
@@ -19,6 +19,6 @@ Run the Code:
 ./qsch par
 ```
 
-With ```par``` the user can determine, which calculation he wants to run.
-```par = 0```: large scale calculation
+With ```par``` the user can determine, which calculation he wants to run.<br>
+```par = 0```: large scale calculation<br>
 ```par = 1```: small scale calculation
