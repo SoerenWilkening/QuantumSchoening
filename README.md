@@ -1,9 +1,9 @@
 ## Data for explicit run-times for hybrid SAT-solvers
-Authors: V. Eshaghian, S. Wilkening, J.  ̊Aberg, D. Gross
+Authors: V. Eshaghian, S. Wilkening, J.  °Aberg, D. Gross
 
 Code for numerical calculations in "Paper Link"
 
-run the code via
+Run the code via
 
 ```
 mkdir build && cd build
