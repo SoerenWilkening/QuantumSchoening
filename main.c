@@ -20,7 +20,6 @@ int main(int argc, char *argv[]) {
             method = small_instance;
         else method = large_instance;
     }
-    printf("method = %d\n", method);
 
     srand(time(NULL));
     char abc[200];
@@ -40,7 +39,19 @@ int main(int argc, char *argv[]) {
     }
 
     // this will only be executed, if "method" is not set to "large_instance"
-    for (int f = 3; f <= 3; f++) {
+    int f1 = 1, f2 = 100;
+    if (argc > 2){
+        if (argc == 4){
+            f1 = atoi(argv[2]);
+            f2 = atoi(argv[3]);
+        }
+        else{
+            printf("not enough values!");
+            return 1;
+        }
+    }
+    
+    for (int f = f1; f <= f2; f++) {
         n = 20;
         n_clause = 91;
         repetitions = 60;
